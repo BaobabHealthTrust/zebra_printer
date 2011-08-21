@@ -1,0 +1,29 @@
+= ZebraPrinter
+
+Generate labels to be printed on Zebra Label Printers
+
+== Install
+
+  gem install baobabhealthtrust-zebra_printer --source http://gems.github.com
+
+== Usage
+
+Generate "Hello Labels!" label
+  require 'zebra_printer'
+  label = ZebraPrinter::StandardLabel.new
+  label.draw_multi_text("Hello labels!")
+  label.print
+  
+Generate health passport label
+  require 'zebra_printer'
+  label = ZebraPrinter::StandardLabel.new
+  label.font_size = 2
+  label.font_horizontal_multiplier = 2
+  label.font_vertical_multiplier = 2
+  label.left_margin = 50
+  label.draw_barcode(50,180,0,1,5,15,120,false,"ABC-DEF")
+  label.draw_multi_text("James Phiri")
+  label.draw_multi_text("ABC-DEF ??/???/2000 (M)")
+  label.draw_multi_text("Unknown location")
+  label.print
+
