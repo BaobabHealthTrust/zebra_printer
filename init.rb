@@ -1,0 +1,1 @@
+require 'zebra_printer'

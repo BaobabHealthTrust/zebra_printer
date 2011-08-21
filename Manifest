@@ -1,9 +1,0 @@
-Manifest
-Rakefile
-docs/EPL Guide for Label Printers.pdf
-lib/README
-lib/zebra_printer.rb
-lib/zebra_printer/debug.rb
-lib/zebra_printer/label.rb
-lib/zebra_printer/visit_label.rb
-test/test_zebra_printer.rb
