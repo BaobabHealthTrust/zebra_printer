@@ -101,7 +101,7 @@ module ZebraPrinter #:nodoc:
 
     # Append the final print command to the label and return the output
     def print(label_sets = 1, label_copies = nil)
-      label_sets = @number_of_labels unless @number_of_labels.blank?
+      label_sets = @number_of_labels if @number_of_labels
       @output << "P#{label_sets}"
       @output << ",#{label_copies}" if label_copies
       @output << "\n"
@@ -187,7 +187,6 @@ module ZebraPrinter #:nodoc:
     
     # Word wrapping, column wrapping, label wrapping text code, see draw_text for more information
     def draw_multi_text(data , options = {})
-      data = data.gsub("'", "\\\\'")
       @font_size = options[:font_size] unless options[:font_size].nil?
       @font_horizontal_multiplier = options[:font_horizontal_multiplier] unless options[:font_horizontal_multiplier].nil?
       @font_vertical_multiplier = options[:font_vertical_multiplier] unless options[:font_vertical_multiplier].nil?
